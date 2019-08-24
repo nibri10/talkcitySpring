@@ -28,7 +28,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     private ApiInfo metaData() {
         return new ApiInfoBuilder()
                 .title("TALK CITY  API ROUTE LIST")
-                .description("\" Event Project with Rest Api\"")
+                .description("\" TALK CITY with Rest Api\"")
                 .version("1.0.0")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")

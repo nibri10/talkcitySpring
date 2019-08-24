@@ -16,6 +16,5 @@ public class TalkcityApplication {
 		SpringApplication.run(TalkcityApplication.class, args);
 	}
 
-	@RequestMapping("/home")
-	public String hello(){return "Hello API TALK CITY";}
+
 }
