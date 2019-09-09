@@ -22,9 +22,14 @@ public class Problem implements Serializable {
     @NotBlank
     private String description;
 
+    @NotBlank
     private String  city;
 
+    @NotBlank
     private Date date;
+
+    @NotBlank
+    private String person;
 
 
     @Column(nullable = false,updatable = false)
@@ -83,5 +88,13 @@ public class Problem implements Serializable {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getPerson() {
+        return person;
+    }
+
+    public void setPerson(String person) {
+        this.person = person;
     }
 }

@@ -44,10 +44,9 @@ public class ProblemController {
         Problem update = problemRepository.findById(problem).orElseThrow(()->new ResourceNotFoundException("Nao foi possivel alterar","id",problem));
                update.setDescription(problemUp.getDescription());
                update.setCity(problemUp.getCity());
+               update.setPerson(problemUp.getPerson());
 
-        Problem updated_At = problemRepository.save(update);
-
-        return updated_At;
+        return problemRepository.save(update);
     }
 
     @ApiOperation(value = "DELETE PROBLEM")
