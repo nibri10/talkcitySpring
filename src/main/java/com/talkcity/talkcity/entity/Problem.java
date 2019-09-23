@@ -31,6 +31,11 @@ public class Problem implements Serializable {
     @NotBlank
     private String person;
 
+    @NotBlank
+    private String like;
+
+    @NotBlank
+    private String dontlike;
 
     @Column(nullable = false,updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
@@ -96,5 +101,22 @@ public class Problem implements Serializable {
 
     public void setPerson(String person) {
         this.person = person;
+    }
+
+
+    public String getLike() {
+        return like;
+    }
+
+    public void setLike(String like) {
+        this.like = like;
+    }
+
+    public String getDontlike() {
+        return dontlike;
+    }
+
+    public void setDontlike(String dontlike) {
+        this.dontlike = dontlike;
     }
 }
