@@ -25,7 +25,7 @@ public class Problem implements Serializable {
     @NotBlank
     private String  city;
 
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
 
 
