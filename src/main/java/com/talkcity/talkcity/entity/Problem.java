@@ -28,10 +28,10 @@ public class Problem implements Serializable {
 
     private Date date;
 
-    @NotBlank
+
     private String person;
 
-    @NotBlank
+
     private String like_problem;
 
     @NotBlank
