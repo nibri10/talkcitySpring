@@ -25,7 +25,7 @@ public class Problem implements Serializable {
     @NotBlank
     private String  city;
 
-    @NotBlank
+
     private Date date;
 
     @NotBlank
