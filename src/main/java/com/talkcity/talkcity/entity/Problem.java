@@ -19,10 +19,10 @@ public class Problem implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @NotBlank
+   
     private String description;
 
-    @NotBlank
+    
     private String  city;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -34,7 +34,7 @@ public class Problem implements Serializable {
 
     private String like_problem;
 
-    @NotBlank
+    
     private String dontlike_problem;
 
     @Column(nullable = false,updatable = false)
