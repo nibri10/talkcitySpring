@@ -46,8 +46,8 @@ public class ProblemController {
                update.setCity(problemUp.getCity());
                update.setPerson(problemUp.getPerson());
                update.setDate(problemUp.getDate());
-               update.setLike(problemUp.getLike());
-               update.setDontlike(problemUp.getDontlike());
+               update.setLike_problem(problemUp.getLike_problem());
+               update.setDontlike_problem(problemUp.getDontlike_problem());
 
         return problemRepository.save(update);
     }

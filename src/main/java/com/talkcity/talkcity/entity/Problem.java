@@ -32,10 +32,10 @@ public class Problem implements Serializable {
     private String person;
 
     @NotBlank
-    private String like;
+    private String like_problem;
 
     @NotBlank
-    private String dontlike;
+    private String dontlike_problem;
 
     @Column(nullable = false,updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
@@ -104,19 +104,19 @@ public class Problem implements Serializable {
     }
 
 
-    public String getLike() {
-        return like;
+    public String getLike_problem() {
+        return like_problem;
     }
 
-    public void setLike(String like) {
-        this.like = like;
+    public void setLike_problem(String like_problem) {
+        this.like_problem = like_problem;
     }
 
-    public String getDontlike() {
-        return dontlike;
+    public String getDontlike_problem() {
+        return dontlike_problem;
     }
 
-    public void setDontlike(String dontlike) {
-        this.dontlike = dontlike;
+    public void setDontlike_problem(String dontlike_problem) {
+        this.dontlike_problem = dontlike_problem;
     }
 }
