@@ -38,24 +38,6 @@ public class ProblemController {
                 .orElseThrow(() -> new ResourceNotFoundException("Nao encontrado", "id", problem));
     }
     
-    @ApiOperation(value = "EDIT LIKE")
-    @PutMapping("/problem/like/{id}")
-    public  Problem UpdatedLike(@PathVariable(value = "id") Long problem,Problem problemUp){
-            Problem update = problemRepository.findById(problem).orElseThrow(()->new ResourceNotFoundException("Nao foi possivel alterar","id",problem));
-            update.setLike_problem(problemUp.getLike_problem());
-            
-        return problemRepository.save(update);
-    }
-    
-    @ApiOperation(value = "EDIT DONT'LIKE")
-    @PutMapping("/problem/dontlike/{id}")
-    public  Problem UpdatedDontLike(@PathVariable(value = "id") Long problem,Problem problemUp){
-            Problem update = problemRepository.findById(problem).orElseThrow(()->new ResourceNotFoundException("Nao foi possivel alterar","id",problem));
-            update.setDontlike_problem(problemUp.getDontlike_problem());
-            
-        return problemRepository.save(update);
-    }
-    
 
     @ApiOperation(value = "EDIT PROBLEM")
     @PutMapping("/problem/{id}")
