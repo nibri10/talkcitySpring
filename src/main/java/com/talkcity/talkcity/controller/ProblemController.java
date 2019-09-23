@@ -39,7 +39,7 @@ public class ProblemController {
     }
     
     @ApiOperation(value = "EDIT LIKE")
-    @PutMapping("/like/{id}")
+    @PutMapping("/problem/like/{id}")
     public  Problem UpdatedLike(@PathVariable(value = "id") Long problem,Problem problemUp){
             Problem update = problemRepository.findById(problem).orElseThrow(()->new ResourceNotFoundException("Nao foi possivel alterar","id",problem));
             update.setLike_problem(problemUp.getLike_problem());
@@ -48,7 +48,7 @@ public class ProblemController {
     }
     
     @ApiOperation(value = "EDIT DONT'LIKE")
-    @PutMapping("/dontlike/{id}")
+    @PutMapping("/problem/dontlike/{id}")
     public  Problem UpdatedDontLike(@PathVariable(value = "id") Long problem,Problem problemUp){
             Problem update = problemRepository.findById(problem).orElseThrow(()->new ResourceNotFoundException("Nao foi possivel alterar","id",problem));
             update.setDontlike_problem(problemUp.getDontlike_problem());
