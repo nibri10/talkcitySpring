@@ -39,18 +39,20 @@ public class ProblemController {
     }
     
 
-    @ApiOperation(value = "EDIT PROBLEM")
-    @PutMapping("/problem/{id}")
-    public  Problem UpdatedProblem(@PathVariable(value = "id") Long problem,Problem problemUp){
-        Problem update = problemRepository.findById(problem).orElseThrow(()->new ResourceNotFoundException("Nao foi possivel alterar","id",problem));
-               update.setDescription(problemUp.getDescription());
-               update.setCity(problemUp.getCity());
-               update.setPerson(problemUp.getPerson());
-               update.setDate(problemUp.getDate());
-               update.setLike_problem(problemUp.getLike_problem());
-               update.setDontlike_problem(problemUp.getDontlike_problem());
-
-        return problemRepository.save(update);
+     @ApiOperation(value = "EDIT PROBLEM")
+    @PutMapping(value="/problem/{id}")
+    public  Problem UpdatedProblem(@PathVariable("id") long id,@RequestBody Problem problemUp){
+             return problemRepository.findById(id).
+                     map(update->{
+                          update.setDescription(problemUp.getDescription());
+                          update.setCity(problemUp.getCity());
+                          update.setPerson(problemUp.getPerson());
+                          update.setDate(problemUp.getDate());
+                          update.setLike_problem(problemUp.getLike_problem());
+                          update.setDontlike_problem(problemUp.getDontlike_problem());
+                          Problem updated = problemRepository.save(update);
+                          return ResponseEntity.ok().body(updated);
+                     }).orElse(ResponseEntity.notFound().build());  
     }
     
     
