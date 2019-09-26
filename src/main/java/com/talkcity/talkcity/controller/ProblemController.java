@@ -53,17 +53,6 @@ public class ProblemController {
                      }).orElse(ResponseEntity.notFound().build());  
     }
     
-    
-    @ApiOperation(value="Like Problem")
-    @PatchMapping("/problem/{id}/like")
-    public Problem updatedLProblem(@Pathvariable(value="id"),@RequestBody String like){
-        Problem up = problemRepository.findById(id)
-                .orElseThrow(()->new ResourceNotFoundException("Nao foi possivel apgar o registro","id",id));
-        up.ifPresent(problem->{up.setlike_problem(like)});
-        
-        return ReponseEntity.ok().build();  
-    }               
-
     @ApiOperation(value = "DELETE PROBLEM")
     @DeleteMapping("/problem/{id}")
     public ResponseEntity<?> DeleteProblem(@PathVariable(value = "id") Long id){
