@@ -39,9 +39,7 @@ public class ProblemController {
     }
     
 
-     @ApiOperation(value = "EDIT PROBLEM")
-    @PutMapping(value="/problem/{id}")
-    public  Problem UpdatedProblem(@PathVariable("id") long id,@RequestBody Problem problemUp){
+     public ResponseEntity<?> UpdatedProblem(@PathVariable("id") long id,@RequestBody Problem problemUp){
              return problemRepository.findById(id).
                      map(update->{
                           update.setDescription(problemUp.getDescription());
