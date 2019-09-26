@@ -38,7 +38,8 @@ public class ProblemController {
                 .orElseThrow(() -> new ResourceNotFoundException("Nao encontrado", "id", problem));
     }
     
-
+    @ApiOperation(value = "Updated")
+    @PutMapping(value="/problem/{id}")
      public ResponseEntity<?> UpdatedProblem(@PathVariable("id") long id,@RequestBody Problem problemUp){
              return problemRepository.findById(id).
                      map(update->{
